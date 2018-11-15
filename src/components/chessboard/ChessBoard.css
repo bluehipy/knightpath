@@ -1,0 +1,31 @@
+.ChessBoard {
+  display: grid;
+   grid-template-columns: repeat(10, 10%);
+   grid-template-rows: repeat(10, 10%);
+   grid-gap: 0;
+   width:500px;
+   height:500px;
+}
+
+.ChessBoard > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0,0,0, .2);
+}
+
+.white{
+  background-color: #FFFFFF;
+}
+
+.black {
+  background-color: grey;
+}
+
+.withWhite{
+  color: #f0c74b;
+}
+
+.withBlack{
+  color: #000;
+}

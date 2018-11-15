@@ -24,4 +24,61 @@ We'll implemenet only QN, P, and selection markup, for now
 So the board will be able to:
 - render two types of cells: sqaures and labels
 - add a markup to cells based on the data it receives as a prop
+- react on drop, since we plan to drop objects on it
 */
+
+import React from "react";
+import ReactDOM from "react-dom";
+import ReactTestUtils from "react-dom/test-utils";
+import ChessBoard from "./ChessBoard";
+import BoardSquare from "./BoardSquare";
+import BoardLabel from "./BoardLabel";
+
+const findByTag = ReactTestUtils.findRenderedDOMComponentWithTag,
+  findOneByType = ReactTestUtils.findRenderedComponentWithType,
+  findByType = ReactTestUtils.scryRenderedComponentsWithType;
+
+let div;
+beforeEach(() => (div = document.createElement("div")));
+afterEach(() => ReactDOM.unmountComponentAtNode(div));
+
+it("renders without crashing", () => {
+  ReactDOM.render(<ChessBoard />, div);
+});
+
+it("renders 64 BoardSquares", () => {
+  const board = ReactDOM.render(<ChessBoard />, div),
+    squares = findByType(board, BoardSquare);
+
+  expect(squares.length).toEqual(64);
+});
+
+it("renders 36 BoardLabels", () => {
+  const board = ReactDOM.render(<ChessBoard />, div),
+    labels = findByType(board, BoardLabel);
+
+  expect(labels.length).toEqual(36);
+});
+
+it("renders BoardSquare", () => {
+  const board = ReactDOM.render(<ChessBoard />, div),
+    square = board.renderSquare(1, 1);
+
+  expect(square.type).toEqual(BoardSquare);
+});
+
+it("renders BoardLabel", () => {
+  const board = ReactDOM.render(<ChessBoard />, div),
+    label = board.renderLabel(0, 0);
+
+  expect(label.type).toEqual(BoardLabel);
+});
+
+it("renders cell based on coordinates", () => {
+  const board = ReactDOM.render(<ChessBoard />, div),
+    square = board.renderCell(1, 1),
+    label = board.renderCell(0, 0);
+
+  expect(square.type).toEqual(BoardSquare);
+  expect(label.type).toEqual(BoardLabel);
+});
