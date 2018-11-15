@@ -29,3 +29,25 @@
 .withBlack{
   color: #000;
 }
+
+
+.sq{
+  font-size: 2em;
+}
+
+
+.QN1::after, .KN1::after{
+  content: "\265E";
+}
+
+.P1::after {
+  content: "\265F";
+}
+
+.P2::after {
+  content: "\265F";
+}
+
+.QN2::after,.KN2::after{
+  content: "\265E";
+}
