@@ -7,6 +7,11 @@ cd knightpath
 yarn install // or `npm install
 ```
 
+Demo version
+===============
+https://bluehipy.github.io/knightpath/
+
+
 Run dev version
 ===============
 
