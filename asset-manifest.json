@@ -1,13 +1,13 @@
 {
-  "main.css": "/knightpath/static/css/main.a19ba449.chunk.css",
-  "main.js": "/knightpath/static/js/main.97e9e6a5.chunk.js",
-  "main.js.map": "/knightpath/static/js/main.97e9e6a5.chunk.js.map",
-  "static/js/1.31263b63.chunk.js": "/knightpath/static/js/1.31263b63.chunk.js",
-  "static/js/1.31263b63.chunk.js.map": "/knightpath/static/js/1.31263b63.chunk.js.map",
-  "runtime~main.js": "/knightpath/static/js/runtime~main.270bde30.js",
-  "runtime~main.js.map": "/knightpath/static/js/runtime~main.270bde30.js.map",
-  "static/css/main.a19ba449.chunk.css.map": "/knightpath/static/css/main.a19ba449.chunk.css.map",
-  "index.html": "/knightpath/index.html",
-  "precache-manifest.caf7a558d0c642cc3ac41261ae6c70b2.js": "/knightpath/precache-manifest.caf7a558d0c642cc3ac41261ae6c70b2.js",
-  "service-worker.js": "/knightpath/service-worker.js"
+  "main.css": "/static/css/main.a19ba449.chunk.css",
+  "main.js": "/static/js/main.eeb01773.chunk.js",
+  "main.js.map": "/static/js/main.eeb01773.chunk.js.map",
+  "static/js/1.31263b63.chunk.js": "/static/js/1.31263b63.chunk.js",
+  "static/js/1.31263b63.chunk.js.map": "/static/js/1.31263b63.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/css/main.a19ba449.chunk.css.map": "/static/css/main.a19ba449.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.89d1d2b3d0b8190f2c462e99004b4736.js": "/precache-manifest.89d1d2b3d0b8190f2c462e99004b4736.js",
+  "service-worker.js": "/service-worker.js"
 }
