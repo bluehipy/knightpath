@@ -30,7 +30,6 @@ class GameBoard extends React.Component {
   }
   generateTableData() {
     let state = this.state,
-      strings = GameBoard.strings,
       pieces = [],
       emptyRow = new Array(8),
       emptyTable = new Array(8);
@@ -77,7 +76,6 @@ class GameBoard extends React.Component {
   animate() {
     const state = this.state;
     let path = state && state.path && state.path.slice(),
-      knight = state && state.knightPos,
       pawn = state && state.pawnPos,
       busy = state && state.busy;
 
@@ -126,17 +124,17 @@ class GameBoard extends React.Component {
 
       let hasMoved = false;
       // check x
-      if (x != x0) {
+      if (x !== x0) {
         x = x < x0 ? x + 1 : x - 1;
         hasMoved = true;
       }
       // if not changed yet check y
-      if (!hasMoved && y != y0) {
+      if (!hasMoved && y !== y0) {
         y = y < y0 ? y + 1 : y - 1;
       }
 
       // if not there yet go further
-      if (x != x0 || y != y0) {
+      if (x !== x0 || y !== y0) {
         setTimeout(() => resolve(this.moveKnightTo(x0, y0)), dt);
       }
       //update position => redraw
@@ -145,7 +143,7 @@ class GameBoard extends React.Component {
       });
 
       //L finished
-      if (x == x0 && y == y0) {
+      if (x === x0 && y === y0) {
         resolve();
       }
     });
