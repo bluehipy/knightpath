@@ -1,24 +1,25 @@
 
-## Knight Path
+## Install  Knight Path
 
-## Install
+`git clone https://github.com/bluehipy/knightpath.git`
+`cd knightpath`
+`yarn install` or `npm install`
 
-## `git clone https://github.com/bluehipy/knightpath.git`
-## `cd knightpath`
-## `yarn install` or `npm install`
+Run dev version
+===============
 
-## Run dev version
+`yarn start`  or `npm start`
 
-## `yarn start`  or `npm start`
+Build production version
+========================
 
-## Build production version
+`yarn build` or `npm run build`
+`serve -s build`
 
-## `yarn build` or `npm run build`
-## `serve -s build`
+Run tests
+=========
 
-## Run tests
-
-## `yarn test` or `npm test`
+`yarn test` or `npm test`
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
