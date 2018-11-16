@@ -24,10 +24,19 @@ it("has the proper class", () => {
   const sq = ReactDOM.render(<BoardSquare />, div),
         dom = findByTag(sq, 'div');
 
-
   expect(dom.className.indexOf('sq')>-1 ).toEqual(true);
 });
 
+it("decorates itself on drag enter / leave", () => {
+  const sq = ReactDOM.render(<BoardSquare isFree="true"/>, div),
+        dom = findByTag(sq, 'div');
+
+  ReactTestUtils.Simulate.dragEnter(dom);
+  expect(dom.className.indexOf('hovered')>-1 ).toEqual(true);
+
+  ReactTestUtils.Simulate.dragLeave(dom);
+  expect(dom.className.indexOf('hovered')>-1 ).toEqual(false);
+});
 
 it("reacts on drop", () => {
   const fn = jest.fn(),

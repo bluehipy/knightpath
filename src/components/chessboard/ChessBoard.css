@@ -51,3 +51,10 @@
 .QN2::after,.KN2::after{
   content: "\265E";
 }
+
+.hovered{
+  border:1px solid red !important;
+}
+.X::after{
+  content: "\1F33D"
+}

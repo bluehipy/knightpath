@@ -138,7 +138,7 @@ it("should reflect the Knight path", () => {
       const data = game.generateTableData(),
         squares = findByType(game, BoardSquare),
         matches = squares.filter(
-          sq => sq.props.markup.indexOf("selected") > -1
+          sq => sq.props.markup.indexOf("X") > -1
         );
 
       expect(matches.length).toEqual(path.length);
