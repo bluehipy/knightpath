@@ -1,0 +1,33 @@
+#main {
+  display: flex;
+  flex-direction: row;
+ flex-wrap: wrap;
+  align-content: space-between;
+}
+#left {
+  min-width: 500px;
+  width: 500px;
+}
+#right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  padding: 20px;
+  min-width:200px;
+  width: 400px;
+}
+
+#top {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  text-align: center;
+}
+
+#bottom {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}

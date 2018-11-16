@@ -82,3 +82,32 @@ it("renders cell based on coordinates", () => {
   expect(square.type).toEqual(BoardSquare);
   expect(label.type).toEqual(BoardLabel);
 });
+
+it("creates corectly the markup", () => {
+  const board = ReactDOM.render(<ChessBoard />, div),
+    black = board.getMarkup(ChessBoard.symbols.EMPTY_CELL, 0, 1),
+    white = board.getMarkup(ChessBoard.symbols.EMPTY_CELL, 1, 1),
+    whiteSymbol = board.getMarkup(ChessBoard.symbols.WHITE_QUEEN_KNIGHT, 3, 3),
+    blackSymbol = board.getMarkup(ChessBoard.symbols.BLACK_PAWN, 2, 2);
+
+  expect(black).toEqual(expect.arrayContaining(["black"]));
+  expect(white).toEqual(expect.arrayContaining(["white"]));
+  expect(whiteSymbol).toEqual(
+    expect.arrayContaining([ChessBoard.symbols.WHITE_QUEEN_KNIGHT, "withWhite"])
+  );
+  expect(blackSymbol).toEqual(
+    expect.arrayContaining([ChessBoard.symbols.BLACK_PAWN, "withBlack"])
+  );
+});
+
+it("reacts on drop over squares", () => {
+  const fn = jest.fn(),
+    board = ReactDOM.render(<ChessBoard onDrop={fn} />, div),
+    squares = findByType(board, BoardSquare),
+    dom = findByTag(squares[0], "div");
+
+  ReactTestUtils.Simulate.drop(dom);
+  expect(fn).toHaveBeenCalledTimes(1);
+
+  expect(fn).toHaveBeenCalledWith(1, 1, undefined);
+});

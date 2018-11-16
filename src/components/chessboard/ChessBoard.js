@@ -4,6 +4,13 @@ import BoardLabel from './BoardLabel';
 import './ChessBoard.css';
 
 class ChessBoard extends React.Component {
+  static symbols = {
+   SEPARATOR: " ",
+   EMPTY_CELL: "-",
+   SELECTED_CELL: "X",
+   WHITE_QUEEN_KNIGHT: "QN1",
+   BLACK_PAWN: "P2"
+ }
   renderCell(i, j) {
     if(i===0 || i===9 || j===0 || j===9){
       return this.renderLabel(i, j)
@@ -22,9 +29,9 @@ class ChessBoard extends React.Component {
     const props = this.props,
           data = props && props.data,
           row = data && data[i-1],
-          cells = row && row.split(" "),
+          cells = row && row.split(ChessBoard.symbols.SEPARATOR),
           markup = this.getMarkup(cells && cells[j-1], i, j),
-          isFree = cells && cells[j-1] && cells[j-1] === "-";
+          isFree = cells && cells[j-1] && cells[j-1] === ChessBoard.symbols.EMPTY_CELL;
 
     return <BoardSquare key={`C${i}x${j}}`} isFree={isFree} markup={markup} onDrop={this.onDrop.bind(this, i, j)}/>
   }
@@ -38,7 +45,7 @@ class ChessBoard extends React.Component {
 
     const className = code.toUpperCase();
 
-    if(className !=="-") {
+    if(className !== ChessBoard.symbols.EMPTY_CELL) {
         classes.push(className);
     }
     // As a rule white figures will end in 1 and black ones in 2
